@@ -3,6 +3,7 @@
 {% block header %}
 <div class="alert alert-primary" role="alert">
     <h3>社内SNS</h3>
+    <a href="{% url 'create' %}"><h6>Create</h6></a>
 </div>
 {% endblock %}
 
@@ -13,8 +14,8 @@
     <div class="alert alert-success" role="alert">
         <p>タイトル: <a href="{% url 'detail' item.pk %}">{{ item.title }}</p>
         <p>投稿者: {{ item.author }}</p>
-        <a href="#" class="btn btn-primary" tabindex="-1" role="button" aria-disabled="true">Primary link</a>
-        <a href="#" class="btn btn-secondary" tabindex="-1" role="button" aria-disabled="true">Link</a>
+        <a href="#" class="btn btn-primary disabled" tabindex="-1" role="button" aria-disabled="true">いいね:{{item.good}}</a>
+        <a href="#" class="btn btn-secondary disabled" tabindex="-1" role="button" aria-disabled="true">既読数:{{item.read}}</a>
     </div>
     {% endfor %}
     <a href="{% url 'logout' %}">logout</a>
